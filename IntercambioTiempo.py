@@ -292,7 +292,7 @@ def obtener_usuarios_por_rango_id(conexion):
         obtener_usuario_por_email(conexion, usuario_id)  # Buscar por email
         obtener_usuario_por_estado(conexion, usuario_id)  # Buscar por estado
         print("\n")
-
+ 
 
 # 16 - Crear una lista en Redis (0.5 puntos)
 
