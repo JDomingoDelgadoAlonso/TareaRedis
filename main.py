@@ -114,19 +114,38 @@ print("\n")
 print("====================================================================================================================================================")
 print("16 - Crear una lista en Redis")
 print("\n")
+nombre_lista = "usuarios_lista"
+crear_lista_usuarios(baseDatosRedis, nombre_lista, 1, 15)
+mostrar_lista(baseDatosRedis, nombre_lista)
 print("\n")
 print("====================================================================================================================================================")
 print("17 - Obtener elementos de una lista con un filtro en concreto")
 print("\n")
+obtener_registros_filtrados_por_nombre(baseDatosRedis, "Pérez")
 print("\n")
 print("====================================================================================================================================================")
 print("18 - En Redis hay otras formas de almacenar datos: Set, Hashes, SortedSet,Streams, Geopatial, Bitmaps, Bitfields,Probabilistic y Time Series. Elige dos de estos tipos, y crea una función que los guarde en la base de datos y otra que los obtenga.")
 print("18 - función que los guarde en la base de datos")
 print("\n")
+# Guardar un hash
+guardar_hash(baseDatosRedis, 'usuario:99', {'nombre': 'Juan Pérez', 'email': 'juan@example.com'})
+
+# Guardar un sorted set
+guardar_sorted_set(baseDatosRedis, 'usuarios_scores', [('Juan', 100), ('Ana', 200)])
+print("\n")
+print("====================================================================================================================================================")
+print("18 - función que los guarde en la base de datos")
+print("\n")
+# Guardar un hash
+guardar_hash(baseDatosRedis, 'usuario:99', {'nombre': 'Juan Pérez', 'email': 'juan@example.com'})
+
+# Guardar un sorted set
+guardar_sorted_set(baseDatosRedis, 'usuarios_scores', [('Juan', 100), ('Ana', 200)])
 print("\n")
 print("====================================================================================================================================================")
 print("18 - función que los obtenga de la base de datos")
 print("\n")
-print("\n")
-print("====================================================================================================================================================")
- 
+# Obtener hash
+obtener_hash(baseDatosRedis, 'usuario:99')
+# Obtener sorted set
+obtener_sorted_set(baseDatosRedis, 'usuarios_scores')
